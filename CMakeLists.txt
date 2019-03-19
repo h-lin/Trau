@@ -1,0 +1,77 @@
+cmake_minimum_required(VERSION 3.13)
+project(Trau_dup)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(src)
+include_directories(src/antlrParser)
+include_directories(/usr/local/include/antlr4-runtime)
+include_directories(/usr/local/include/fst)
+include_directories(../custom-z3/include)
+link_libraries(../custom-z3/lib/z3)
+link_libraries(fst)
+
+add_executable(Trau_dup
+        src/antlrParser/SMTLIB26Lexer.cpp
+        src/antlrParser/SMTLIB26Lexer.h
+        src/antlrParser/SMTLIB26Parser.cpp
+        src/antlrParser/SMTLIB26Parser.h
+        src/antlrParser/SMTLIB26ParserBaseListener.cpp
+        src/antlrParser/SMTLIB26ParserBaseListener.h
+        src/antlrParser/SMTLIB26ParserBaseVisitor.cpp
+        src/antlrParser/SMTLIB26ParserBaseVisitor.h
+        src/antlrParser/SMTLIB26ParserListener.cpp
+        src/antlrParser/SMTLIB26ParserListener.h
+        src/antlrParser/SMTLIB26ParserVisitor.cpp
+        src/antlrParser/SMTLIB26ParserVisitor.h
+        src/antlrParser/SMTLIB26ScriptListener.h
+        src/antlrParser/SMTLIB26TermListener.h
+        src/antlrParser/SMTLIB2Lexer.cpp
+        src/antlrParser/SMTLIB2Lexer.h
+        src/antlrParser/SMTLIB2Parser.cpp
+        src/antlrParser/SMTLIB2Parser.h
+        src/antlrParser/SMTLIB2ParserBaseListener.cpp
+        src/antlrParser/SMTLIB2ParserBaseListener.h
+        src/antlrParser/SMTLIB2ParserBaseVisitor.cpp
+        src/antlrParser/SMTLIB2ParserBaseVisitor.h
+        src/antlrParser/SMTLIB2ParserListener.cpp
+        src/antlrParser/SMTLIB2ParserListener.h
+        src/antlrParser/SMTLIB2ParserVisitor.cpp
+        src/antlrParser/SMTLIB2ParserVisitor.h
+        src/antlrParser/SMTLIB2ScriptListener.h
+        src/antlrParser/SMTLIB2TermListener.h
+        src/antlrParser/SMTLIB2TrauListener.h
+        src/Arrangement.h
+        src/Automaton.cpp
+        src/Automaton.h
+        src/Config.h
+        src/CreateFlats.cpp
+        src/FileConverter.cpp
+        src/FileConverter.h
+        src/FileUtils.cpp
+        src/FileUtils.h
+        src/GrmOverApprox.cpp
+        src/GrmOverApprox.h
+        src/GrmUnderApprox.cpp
+        src/GrmUnderApprox.h
+        src/main.cpp
+        src/PolishNotation.h
+        src/Regex.cpp
+        src/Regex.h
+        src/RegexPattern.cpp
+        src/RegexPattern.h
+        src/RegexState.cpp
+        src/RegexState.h
+        src/StringReduce.cpp
+        src/StringTheory.cpp
+        src/StringTheory.h
+        src/TimeLapse.h
+        src/TokenParser.cpp
+        src/TokenParser.h
+        src/Transition.h
+        src/UnderApprox.cpp
+        src/UnderApprox.h
+        src/Utils.cpp
+        src/Utils.h
+        src/Z3Utils.cpp
+        src/Z3Utils.h)

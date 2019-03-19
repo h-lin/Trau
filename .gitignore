@@ -1,3 +1,7 @@
+/cmake-build-debug/
+/build/
+/build-tmp/
+/build-local/
 /Debug/
 /Release/
 /install/
@@ -5,3 +9,4 @@
 /.cproject
 /.settings/
 /.DS_Store  
+/.idea/
