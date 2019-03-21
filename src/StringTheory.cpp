@@ -6240,6 +6240,7 @@ Z3_bool Th_final_check(Z3_theory t) {
 	__debugPrint(logFile, "=============================================================\n");
 #endif
 
+    printf("Z3_bool Th_final_check(Z3_theory t)\n");
 	if (config.printingConstraints)
 		done = true;
 
@@ -10039,6 +10040,7 @@ void checkInputVar(Z3_theory t, Z3_ast node) {
  */
 void check(Z3_theory t){
 
+    printf("void check(Z3_theory t)\n");
 	Z3_context ctx = Z3_theory_get_context(t);
 	Z3_model m      = 0;
 	Z3_lbool result = Z3_check_and_get_model(ctx, &m);
